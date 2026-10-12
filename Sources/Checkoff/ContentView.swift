@@ -120,24 +120,17 @@ struct ContentView: View {
                         SubTaskField(parent: item)
                     }
                 }
-                endDropZone
+                InsertionLine()
+                    .padding(.leading, 8)
+                    .opacity(ui.dropTarget == ListUI.DropTarget(row: nil, action: .end) ? 1 : 0)
             }
             .padding(.horizontal, 6)
             .padding(.top, 6)
+            .padding(.bottom, 40)
         }
-    }
-
-    /// The empty space below the last task: dropping here moves a task to the end of the list.
-    private var endDropZone: some View {
-        Color.clear
-            .frame(maxWidth: .infinity, minHeight: 90)
-            .contentShape(Rectangle())
-            .overlay(alignment: .top) {
-                if ui.dropTarget == ListUI.DropTarget(row: nil, action: .end) {
-                    InsertionLine().padding(.leading, 8)
-                }
-            }
-            .onDrop(of: [.text], delegate: TaskDropDelegate(target: nil, model: model, ui: ui))
+        // Anywhere in the list that is not a row, including all the empty space
+        // below the last task: dropping there moves a task to the end.
+        .onDrop(of: [.text], delegate: TaskDropDelegate(target: nil, model: model, ui: ui))
     }
 }
 
