@@ -1,0 +1,18 @@
+# SwiftPM
+.build/
+.swiftpm/
+
+# Xcode (if a project is ever generated locally)
+*.xcodeproj
+*.xcworkspace
+xcuserdata/
+DerivedData/
+
+# Packaging output
+dist/
+*.app
+*.dmg
+*.zip
+
+# macOS
+.DS_Store
