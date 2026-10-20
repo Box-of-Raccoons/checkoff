@@ -60,9 +60,13 @@ else, such as a synced folder:
 defaults write com.boxofraccoons.checkoff tasksFile "~/Notes/tasks.md"
 ```
 
-## Requirements
+## Install
 
-macOS 14 (Sonoma) or later.
+Download the dmg from the
+[latest release](https://github.com/Box-of-Raccoons/checkoff/releases/latest),
+open it, and drag Checkoff to Applications. It is signed and notarized.
+
+Requires macOS 14 (Sonoma) or later.
 
 ## Building
 
